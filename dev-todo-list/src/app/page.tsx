@@ -149,8 +149,8 @@ export default function Home() {
   );
 
   return (
-    <main className="min-h-screen flex flex-col items-center p-6 bg-gray-100 font-sans">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Todo List</h1>
+    <main className="min-h-screen flex flex-col items-center p-6 bg-gray-800 font-sans">
+      <h1 className="text-3xl font-bold mb-6 text-gray-100">Todo List</h1>
 
       {/* AI Toggle + Add Task Bar */}
       <div className="flex gap-2 mb-4 w-full max-w-md items-center">
@@ -218,7 +218,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 p-4"
+              className=" rounded-md mb-2 resize-none focus:outline-none focus:ring-2 focus:ring-black-500 transition"
             >
               <div className="flex justify-between items-start">
                 <div className="flex items-start gap-3">
@@ -229,8 +229,8 @@ export default function Home() {
                     className="mt-1 accent-green-500"
                   />
                   <h3
-                    className={`text-md font-semibold ${
-                      todo.completed ? 'line-through text-gray-400 italic' : 'text-gray-800'
+                    className={`text-md font-semibold text-gray-200 ${
+                      todo.completed ? 'line-through text-gray-400 italic' : 'text-gray-200'
                     }`}
                   >
                     {todo.text}
@@ -249,7 +249,7 @@ export default function Home() {
               {todo.subtasks.length > 0 && (
                 <ul className="mt-3 space-y-1 pl-6 border-l border-gray-200">
                   {todo.subtasks.map((sub) => (
-                    <li key={sub.id} className="flex items-center gap-2 text-sm text-gray-700">
+                    <li key={sub.id} className="flex items-center gap-2 text-sm text-gray-300">
                       <input
                         type="checkbox"
                         checked={sub.completed}
