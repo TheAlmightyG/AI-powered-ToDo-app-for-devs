@@ -163,7 +163,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center p-6 bg-gray-800 font-sans">
-      <h1 className="text-3xl font-bold mb-6 text-gray-100">Dylan Waters's AI Assisted To-Do List</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-100">Dylan Waters' AI Assisted To-Do List</h1>
 
       {/* AI Toggle + Add Task Bar */}
       <div className="flex gap-2 mb-4 w-full max-w-md items-center">
