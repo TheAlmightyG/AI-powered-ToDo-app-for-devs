@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // import { v4 as uuidv4 } from 'uuid'; // Uncomment if you install uuid
 
@@ -27,6 +27,19 @@ export default function Home() {
   const [aiInput, setAiInput] = useState('');
   const [showAI, setShowAI] = useState(false);
   const [loadingAi, setLoadingAi] = useState(false);
+
+  // Load todos from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem('todos');
+    if (stored) {
+      setTodos(JSON.parse(stored));
+    }
+  }, []);
+
+  // Save todos to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   // Utility for unique IDs
   const getId = () => Date.now() + Math.random(); // Replace with uuidv4() for string IDs
